@@ -111,7 +111,7 @@ print(f"after swapping x is {x} and y is {y}")
 numbers = [1,1,2,3,4]
 first = set(numbers)
 second = { 1,5,6 }
-print(f"The union of the two sets is { first | second}")
+print(f"The union of the two sets is { first | second }")
 print(f"The intersection of the two sets is { first & second}")
 print(f"The difference of the two sets is { first - second}")
 print(f"The symetric difference of the two sets is { first ^ second}")
@@ -218,3 +218,4 @@ else:
 finally:
     print("cleaning up and releasing external resources is done in the \n "
           "finally clause.")
+
