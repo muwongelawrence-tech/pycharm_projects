@@ -1,7 +1,13 @@
+#use of modules
 from abc import ABC, abstractmethod
+from sales import greet
+from sales import get_phone, emoji_converter
 
+greet()
+print("----lets be greeted by the program in amore condusive way.---")
+emoji_converter()
 
-# class definitions
+# class definitions(implementing OOP in python)
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -186,3 +192,6 @@ class Text(str):
 
 text = Text("Muwonge")
 print(text.duplicate())
+
+print("----------Now lets look at a phone number interpreter----------")
+get_phone()
