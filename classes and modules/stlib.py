@@ -5,6 +5,11 @@ from zipfile import ZipFile
 import csv
 import json
 from datetime import datetime
+import random
+import string
+import requests
+
+from string import Template
 import webbrowser
 from email.mime.multipart import MIMEMultipart
 import smtplib
@@ -33,8 +38,8 @@ with open("data.csv", "w") as file:
 
 #working with JSON files
 movies = [
-    {"id": 1, "title": "Terminator", "year": 1989},
-    {"id": 2, "title": "Romance", "year": 1993}
+    {"id": 1, "title": "Terminator", "year": 1989 },
+    {"id": 2, "title": "Romance", "year": 1993 }
 ]
 
 data = json.dumps(movies)
@@ -68,19 +73,43 @@ print(dt)
 dt = datetime.now()
 print(dt)
 
- #Automating browser opening.
+#Automating browser opening.
 print("---OPening webbrowser after deployment---")
-# webbrowser.open("http://stripe.com")
+# webbrowser.open("http://tailwindcss.com")
+# webbrowser.open("http://google.com")
 
 # sending Emails using python
-message = MIMEMultipart()
-message["from"] = "Muwonge Lawrence"
-message["to"] = "muwongelawrence44@gmail.com"
-message["subject"] = "This is a test"
-message.attach(MIMEText("Body"))
-with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
-    smtp.ehlo()
-    smtp.starttls()
-    smtp.login("muwongelawrence44@gmail.com", "1234")
-    smtp.send_message(message)
-    print("Message sent...")
+# print("sending emails in python")
+# message = MIMEMultipart()
+# message["from"] = "Muwonge Lawrence"
+# message["to"] = "muwongelawrence44@gmail.com"
+# message["subject"] = "This is a test"
+# message.attach(MIMEText("Body"))
+# with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
+#   smtp.ehlo()
+#   smtp.starttls()
+#   smtp.login("muwongelawrence44@gmail.com", "M@ww8359")
+#   smtp.send_message(message)
+# print("Message sent...")
+
+#working with random values
+print(random.random())
+print(random.randint(1, 10))
+print(random.choice([1, 2, 3, 4]))
+print(random.choices([1, 2, 3, 4], k=2))
+print("".join(random.choices("abcdefghijklmn", k=5)))
+print(string.ascii_lowercase)
+print(string.ascii_uppercase)
+print(string.digits)
+print("lets form a random strict password of combined eight characters.")
+print("".join(random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits,k=8)))
+
+#shuffling an array
+numbers = [1, 2, 3, 4]
+print(f"original array is { numbers }")
+random.shuffle(numbers)
+print(f"shuffled  array is { numbers }")
+
+response = requests.get("https://google.com")
+print(f"the status of the response is { response }")
+
