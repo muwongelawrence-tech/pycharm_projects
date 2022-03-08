@@ -238,3 +238,24 @@ arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
 
 for x in np.nditer(arr[:, ::2]):
   print(x)
+
+
+#vectorized operations
+arr1 = np.array([1, 2, 3, 4])
+print(arr1)
+
+# Vector (element-wise) operations
+print(arr1 * 2)
+print(arr1 + 2)
+print(arr1 * arr1)
+
+# Create a 3x3 array of random integers in the interval [0, 10)
+x = np.random.randint(0, 10, (3, 3))
+
+print("ndim: ", x.ndim)
+print("shape:", x.shape)
+print("x size: ", x.size)
+print("dtype:", x.dtype)
+print("itemsize:", x.itemsize, "bytes")
+print("nbytes:", x.nbytes, "bytes")
+
