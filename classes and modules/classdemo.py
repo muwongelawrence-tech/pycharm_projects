@@ -4,7 +4,7 @@ from sales import greet
 from sales import get_phone, emoji_converter
 
 greet()
-print("----lets be greeted by the program in amore condusive way.---")
+print("----lets be greeted by the program in amore condusive way.---\n Enter any sad or happy message:")
 emoji_converter()
 
 # class definitions(implementing OOP in python)
@@ -48,13 +48,13 @@ print(point1 > other)
 # magic methods for arithemetic operations
 print(point1 + other)
 
-
+# using some python datastructures
 class TagCloud:
     def __init__(self):
         self.tags = {}
 
     def add(self, tag):
-        self.tags[tag] = self.tags.get(tag, 0) + 1
+        self.tags[tag.lower()] = self.tags.get(tag, 0) + 1
 
     def __getitem__(self, tag):
         return self.tags.get(tag.lower(), 0)
@@ -101,7 +101,7 @@ product = Product(10)
 print(product.price)
 
 
-# inherintance in classess.
+# inherintance in classes
 class Animal:
     def __init__(self):
         self.age = 1
