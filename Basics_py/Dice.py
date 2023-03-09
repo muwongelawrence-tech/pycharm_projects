@@ -6,6 +6,7 @@ class Dice:
 
         return first, second
 
+
 dice = Dice()
 print(dice.roll())
 

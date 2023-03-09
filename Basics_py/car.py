@@ -20,8 +20,8 @@ while True:
     elif command == "help":
         print("""
             start -> for starting the car
-            stop -> for stopping the car
-            quit for exiting the program
+            stop  -> for stopping the car
+            quit  -> for exiting the program
             
         """)
     elif command == "quit":

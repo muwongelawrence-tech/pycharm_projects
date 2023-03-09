@@ -34,10 +34,10 @@ print(np.round(array6))
 
 print("some cool arithmetic operations in numpy")
 dimensions_inch = np.array([1, 2, 3])
-print(f" dimensions in inches { dimensions_inch}")
+print(f" dimensions in inches { dimensions_inch }")
 dimensions_cm = dimensions_inch * 2.54
 print("After working with numpy ")
-print(f" dimensions in inches { dimensions_cm}")
+print(f" dimensions in inches { dimensions_cm }")
 
 #implementation using pure python
 # dimensions_inch = [1, 2, 3]
@@ -258,4 +258,6 @@ print("x size: ", x.size)
 print("dtype:", x.dtype)
 print("itemsize:", x.itemsize, "bytes")
 print("nbytes:", x.nbytes, "bytes")
+
+
 
