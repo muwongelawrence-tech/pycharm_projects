@@ -17,7 +17,7 @@ print(f"The length of the above string is {len(course)}")
 print("lets print a multiline string.")
 email = '''
 ---------------------------------------------------
-hi john , 
+hi Muwonge Lawrence , 
 welcome on the board
 we have been really missing you
 regards;
@@ -43,7 +43,7 @@ y = int(x) + 1
 print(f"y is {y}")
 
 #lets print alist of items
-print("lists ------------------------")
+print("-----------working with  lists ------------------------")
 numbers = list(range(20))
 zeros = [0]*5
 print(zeros)
@@ -121,7 +121,7 @@ print(f"The symetric difference of the two sets is { first ^ second}")
 
 
 #dictionaries
-print("---------dictionaries--------------")
+print("---------dictionaries section--------------")
 point = dict(x=1,y=2)
 print(point)
 print(f"The value of key x is : { point.get('x')}")
@@ -129,7 +129,7 @@ print(f"The value of key y is : { point.get('y')}")
 print(f"The value of key a is : { point.get('a',0)}")
 
 print("-------iterating a dictionary----------")
-print("this is done by unpacking a tuple from point.items()")
+print("This is done by unpacking a tuple from point.items()")
 for key, value in point.items():
     print(key, value)
 
