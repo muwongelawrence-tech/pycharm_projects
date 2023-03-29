@@ -29,8 +29,7 @@ print("Value for apples: ", fruits['apples'], "\n")
 # Series also supports array-style operations such as slicing:
 print(fruits['bananas':'strawberries'])
 
-data_s1 = pd.Series([12, 24, 33, 15], 
-           index=['apples', 'bananas', 'strawberries', 'oranges'])
+data_s1 = pd.Series([12, 24, 33, 15], index=['apples', 'bananas', 'strawberries', 'oranges'])
 
 # 'quantity' is the name for our column
 dataframe1 = pd.DataFrame(data_s1, columns=['quantity'])
@@ -59,7 +58,7 @@ df = pd.DataFrame({'quantity': quantity,
                     'price': price})
 print(df)
 
-#Constructing a Dataframe by Importing Data From a File
+# Constructing a Dataframe by Importing Data From a File
 print("Constructing a Dataframe by Importing Data From a File")
 
 # Given we have a file called data1.csv in our working directory:
