@@ -18,4 +18,6 @@ if __name__ == "__main__":
     print("Starting URL pinger...")
     while True:
         ping_url()
-        time.sleep(120)  # Wait for 2 minutes (120 seconds) before the next ping
+        time.sleep(600)  # Wait for 10 minutes (600 seconds) before the next ping
+
+# run script in your terminal using ::--> python3 Test_backend.py 
