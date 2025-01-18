@@ -226,5 +226,72 @@ return (
   </MapboxGL.MapView>
 );
 
+// PICKING COORDINATES ON TAP OF THE USER INTERFACE  ..
+import React, { useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import MapboxGL from '@rnmapbox/maps';
+
+MapboxGL.setAccessToken('YOUR_MAPBOX_ACCESS_TOKEN');
+
+const PrechsMap = () => {
+  const [selectedCoordinates, setSelectedCoordinates] = useState(null);
+
+  const handleMapPress = (event) => {
+    const { geometry } = event;
+    if (geometry && geometry.coordinates) {
+      const [longitude, latitude] = geometry.coordinates;
+      setSelectedCoordinates([longitude, latitude]);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <MapboxGL.MapView
+        style={styles.map}
+        onPress={handleMapPress} // Listen for map presses
+      >
+        <MapboxGL.Camera
+          zoomLevel={15}
+          centerCoordinate={[32.5349, 0.1972]} // Initial map center
+        />
+
+        {/* Marker for selected location */}
+        {selectedCoordinates && (
+          <MapboxGL.PointAnnotation
+            id="selectedLocation"
+            coordinate={selectedCoordinates}
+          />
+        )}
+      </MapboxGL.MapView>
+
+      {/* Display selected coordinates */}
+      {selectedCoordinates && (
+        <View style={styles.infoContainer}>
+          <Text>Selected Coordinates:</Text>
+          <Text>
+            Latitude: {selectedCoordinates[1]}, Longitude: {selectedCoordinates[0]}
+          </Text>
+        </View>
+      )}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  map: {
+    flex: 1,
+  },
+  infoContainer: {
+    padding: 10,
+    backgroundColor: 'white',
+  },
+});
+
+export default PrechsMap;
+
+
 
 
