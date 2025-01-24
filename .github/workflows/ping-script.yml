@@ -1,6 +1,9 @@
-name: Prechs Server URL Pinger
+name: URL Pinger
 
 on:
+  push:
+    branches:
+      - main           # Triggers when changes are pushed to the 'main' branch
   schedule:
     - cron: "*/10 * * * *"  # Runs every 10 minutes
   workflow_dispatch:        # Allows manual triggering of the workflow
