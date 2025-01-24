@@ -31,4 +31,4 @@ jobs:
 
       # Run the Python script
       - name: Run Test_backend.py
-        run: python Test_backend.py
+        run: python3 Test_backend.py
