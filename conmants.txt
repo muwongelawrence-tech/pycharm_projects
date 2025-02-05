@@ -1,0 +1,36 @@
+DELETING FAILED WORKFLOWS USING TERMINAL 
+
+Step 1: Install GitHub CLI (if not installed)
+--> sudo apt install gh  # Linux (Debian-based)
+--> brew install gh      # macOS
+--> winget install GitHub.cli  # Windows
+
+Step 2: Authenticate GitHub CLI
+--> gh auth login
+
+Step 3: write a bash script and paste in the following 
+#!/bin/bash
+
+REPO="muwongelawrence-tech/pycharm_projects"
+
+echo "Fetching failed workflow runs for repository: $REPO"
+gh run list --repo "$REPO" --status failure --json databaseId | jq -r '.[].databaseId' | while read -r run_id; do
+  if [[ -n "$run_id" ]]; then
+    echo "Submitting deletion request for run ID: $run_id"
+    gh run delete "$run_id" --repo "$REPO"
+    sleep 2  # Add a small delay to avoid API rate limits
+  else
+    echo "⚠️ No failed workflow runs found."
+  fi
+done
+
+echo "✅ Deletion requests have been sent for all failed workflow runs!"
+
+Step 4: Make the script executable:
+--> sudo ./delete_failed_runs.sh
+
+Step 5: Run the script to delete the failed workflows in batches 
+--> ./delete_failed_runs.sh
+
+or Run the script multiple times while sleeping for some seconds 
+--> while ./delete_failed_runs.sh; do sleep 10; done
