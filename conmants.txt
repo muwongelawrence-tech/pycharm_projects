@@ -27,10 +27,10 @@ done
 echo "✅ Deletion requests have been sent for all failed workflow runs!"
 
 Step 4: Make the script executable:
---> sudo ./delete_failed_runs.sh
+--> sudo chmod +x delete_failed_runs.sh
 
 Step 5: Run the script to delete the failed workflows in batches 
---> ./delete_failed_runs.sh
+--> sudo ./delete_failed_runs.sh
 
 or Run the script multiple times while sleeping for some seconds 
 --> while ./delete_failed_runs.sh; do sleep 10; done
