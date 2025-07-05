@@ -19,7 +19,7 @@
 #     while True:
 #         ping_url()
 #         time.sleep(600)  # Wait for 10 minutes (600 seconds) before the next ping
-# https://prechohub-server.onrender.com
+# 
 
 # run script in your terminal using ::--> python3 Test_backend.py 
 
@@ -28,7 +28,7 @@ import time
 
 # URLs to be pinged
 urls = [
-    "https://evynts-server.onrender.com",
+    "https://prechohub-server.onrender.com",
 ]
 
 def ping_url(url):
