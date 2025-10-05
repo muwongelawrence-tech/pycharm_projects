@@ -3,7 +3,7 @@ import time
 
 # URLs to be pinged
 urls = [
-    "https://prechohub-server.onrender.com",
+    "https://evynts-server.onrender.com",
 ]
 
 def ping_url(url):
