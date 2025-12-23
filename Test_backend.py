@@ -4,6 +4,7 @@ import time
 # URLs to be pinged
 urls = [
     "https://evynts-server.onrender.com",
+    "https://chadash-service.onrender.com"
 ]
 
 def ping_url(url):
